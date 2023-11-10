@@ -43,19 +43,24 @@
       <h1>Jeon In Bae</h1>
       <section id="home">
         <div class="intro">
-          <h2>CREATIVE <span>DEVELOPER</span></h2>
+          <h2>PRONTEND <span>DEVELOPER</span></h2>
           <p>
-            <span>"외유내강"이라는 말이 있듯이,</span> <br />
-            겉으로 표현되는 모습은 아름답지만 속은 체계적인 하루를 살기 위해
-            <span>의식적으로 노력하는 개발자 전인배 입니다.</span> <br />톡톡
-            튀는 아이디어와 정확한 레퍼런스로 퍼포먼스를 내겠습니다. <br />
+            <span>프로젝트 하나 만들면 끝</span> <br />
+            이란 생각보다 주기적으로 수정 보완하며 업그레이드하는
+            <span>개발자 전인배 입니다.</span> <br />애자일한 프로세스로 개발에
+            임하겠습니다. <br />
           </p>
           <div class="myico">
-            <span><i class="fab fa-facebook-f"></i></span>
-            <span><i class="fab fa-twitter"></i></span>
-            <span><i class="fab fa-youtube"></i></span>
-            <span><i class="fab fa-google-plus-g"></i></span>
-            <span><i class="fab fa-android"></i></span>
+            <span>
+              <a href="https://github.com/kimnya">
+                <i class="fab fa-github"></i>
+              </a>
+            </span>
+            <span
+              ><a href="https://velog.io/@kimnya">
+                <i class="fab fa-blogger-b"></i>
+              </a>
+            </span>
           </div>
         </div>
 
@@ -83,7 +88,7 @@
           <nav>
             <ul class="gnb">
               <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Skill & UX-Design</a></li>
+
               <li><a href="#">About-Me</a></li>
             </ul>
           </nav>
@@ -91,26 +96,25 @@
       </header>
 
       <hr />
+
       <section id="portfolio">
         <h2 class="wow fadeInUp">PORTFOLIO</h2>
         <article class="slides">
           <ul class="slides-pagination">
             <li class="on"><a href="#">휴먼메이드(쇼핑몰)</a></li>
             <li><a href="#">소금집(F&B)</a></li>
-            <li><a href="#">카카오톡(앱)</a></li>
+            <li><a href="#">카카오톡</a></li>
           </ul>
           <div class="slides-container">
             <figure>
-              <figcaption>
+              <figcaption id="humanmade">
                 <h3>휴먼메이드(쇼핑몰)</h3>
                 <p class="'tip">Human Made Shopping Mall</p>
                 <p class="desc">
-                  기존 웹사이트의 개선사항을 찾아 메인페이지를 리뉴얼
-                  디자인하였습니다.<br />
-                  빽다방의 컬러 아이덴티티를 사용하여 브랜드 이미지를
-                  강조하였으며,<br />
-                  간결한 레이아웃으로 전달하고자 하는 내용을 보기 쉽게
-                  배치하였습니다.
+                  기존 웹사이트를 클론코딩 해보았습니다.<br />
+                  React.js의 문법을 익히며 axios사용과 api 호출<br />
+                  정규 표현식을 사용한 회원가입 폼 조건부 렌더링 <br />등을구현
+                  했습니다. <br />
                 </p>
                 <p class="tools"><span>기술스택</span> : React.js</p>
 
@@ -122,22 +126,25 @@
                     class="proc"
                     >작업과정</a
                   >
+
                   <a
-                    href="https://paikdabang.com/"
+                    href="https://kimnya.github.io/human"
                     target="_blank"
                     rel="noopener noreferrer"
+                    id="modalHnadle"
                     >사이트보기</a
                   >
+
+                  <a
+                    href="https://github.com/kimnya/human"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >github</a
+                  >
                 </p>
-                <!-- <p class="shadow">
-                  <span class="lightbox">
-                    <img src="https://bitly.ws/UcSg" alt="#" />
-                  </span>
-                  <button class="clse">닫기</button>
-                </p> -->
               </figcaption>
               <div class="frame">
-                <img src="./images/portfolio/pofol-03.gif" alt="휴먼메이드" />
+                <img src="./images/portfolio/humanmade.gif" alt="휴먼메이드" />
               </div>
             </figure>
 
@@ -146,12 +153,12 @@
                 <h3>소금집(F&B)</h3>
                 <p class="'tip">SaltHouse F&B Site</p>
                 <p class="desc">
-                  기존 웹사이트의 개선사항을 찾아 메인페이지를 리뉴얼
-                  디자인하였습니다.<br />
-                  빽다방의 컬러 아이덴티티를 사용하여 브랜드 이미지를
-                  강조하였으며,<br />
-                  간결한 레이아웃으로 전달하고자 하는 내용을 보기 쉽게
-                  배치하였습니다.
+                  기존 웹사이트를 클론코딩 해보았습니다.
+                  <br />
+                  UX/UI를 고려하여 제품 이미지를 수정했습니다.<br />
+                  jQuery를 사용하여 페이지네이션,햄버거메뉴등을 구현했습니다.
+                  <br />
+                  테블릿(width:640px)기준으로 반응형작업 했습니다.
                 </p>
                 <p class="tools">
                   <span>기술스택</span> : HTML, CSS, SCSS, jQuery
@@ -171,6 +178,12 @@
                     rel="noopener noreferrer"
                     >사이트보기</a
                   >
+                  <a
+                    href="https://github.com/kimnya/salthouse-renewal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >github</a
+                  >
                 </p>
               </figcaption>
               <div class="frame">
@@ -180,21 +193,22 @@
 
             <figure>
               <figcaption>
-                <h3>카카오톡(앱)</h3>
-                <p class="'tip">kakaotalk App</p>
+                <h3>카카오톡</h3>
+                <p class="'tip">kakaotalk</p>
                 <p class="desc">
-                  기존 웹사이트의 개선사항을 찾아 메인페이지를 리뉴얼
-                  디자인하였습니다.<br />
-                  빽다방의 컬러 아이덴티티를 사용하여 브랜드 이미지를
-                  강조하였으며,<br />
-                  간결한 레이아웃으로 전달하고자 하는 내용을 보기 쉽게
-                  배치하였습니다.
+                  기존 앱을 웹에서 클론코딩 해보았습니다.
+                  <br />
+
+                  SCSS의 사용을 익히며 하나의 .style파일에서 <br />
+                  class와 id로 여러 페이지를 구분했습니다. <br />
+                  css의 기술만으로 페이지이동, 애니메이션등
+                  <br />사용자와 상호작용하는 느낌의 효과를 주었습니다.
                 </p>
                 <p class="tools"><span>기술스택</span> : HTML, CSS, SCSS</p>
 
                 <p class="btn">
                   <a
-                    href="#"
+                    href="https://velog.io/@kimnya/series/%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="proc"
@@ -206,6 +220,12 @@
                     rel="noopener noreferrer"
                     >사이트보기</a
                   >
+                  <a
+                    href="https://github.com/kimnya/mykatalk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >github</a
+                  >
                 </p>
               </figcaption>
               <div class="frame">
@@ -216,93 +236,35 @@
 
           <a href="#" class="slides-navigation slides-prev">이전</a>
           <a href="#" class="slides-navigation slides-next">다음 </a>
-        </article>
 
-        <hr />
-      </section>
-      <hr />
 
-      <section id="skill">
-        <h2>SKILL & UX-Design</h2>
-        <article class="skill-1">
-          <ol>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>SASS</li>
-            <li>JAVASCRIPT</li>
-            <li>JQUERY</li>
-            <li>REACT</li>
-          </ol>
-        </article>
-        <hr />
-        <article class="slides">
-          <h3 class="sr-only">작품리스트</h3>
-          <ul class="slides-container">
-            <li class="banner_1">UX/UI</li>
-            <li class="banner_2">UX Process</li>
-            <li class="banner_3">UX Design</li>
-            <li class="banner_4">Prototype</li>
-          </ul>
-          <ol class="slides-pagination">
-            <li class="on"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-          </ol>
-          <a href="#" class="slides-nav slides-prev">이전</a>
-          <a href="#" class="slides-nav slides-next">다음</a>
-        </article>
-
-        <hr />
-        <article class="uxui">
-          <h3>Design과 UX의 차이</h3>
-          <div class="container">
-            <div class="uxui-case">
-              <dl>
-                <dt>1. 와인 코르크 마개</dt>
-                <dd>
-                  와인의 코르크 마개를 작은 다육식물<br />
-                  화분으로 업사이클링(Upcycling)한 사례
-                </dd>
-              </dl>
-
-              <span class="ui-frame"
-                ><img src="./images/uxdesign/uiux-1.jpg" alt=""
-              /></span>
-              <span class="ux-frame"
-                ><img src="./images/uxdesign/uiux-2.jpg" alt=""
-              /></span>
+          <div class="shadow">
+            <div class="lightbox">
+              
+              <video
+              muted
+              autoplay
+              playsinline
+              controls
+              src="./images/portfolio/human.mp4"
+              > </video>
+      
+              <button class="clse">닫기</button>
             </div>
-            <div class="uxui-case">
-              <dl>
-                <dt>2. 물티슈 보호 캡</dt>
-                <dd>
-                  오염, 수분증발을 방지하는 물티슈 보호 캡을 콘센트 보호<br />
-                  덮개로 활용한 사례
-                </dd>
-              </dl>
-
-              <span class="ui-frame"
-                ><img src="./images/uxdesign/uiux-3.jpg" alt=""
-              /></span>
-              <span class="ux-frame"
-                ><img src="./images/uxdesign/uiux-4.jpg" alt=""
-              /></span>
-            </div>
-          </div>
         </article>
+
+        <hr />
       </section>
       <hr />
 
       <section id="aboutme">
-        <!-- <audio controls autoplay class="bgm" src="./media/music.mp3"></audio> -->
         <h2>ABOUT ME</h2>
 
         <div class="container">
           <article class="profile">
             <div>
               <h3 class="myphoto">
-                <img src="./images/me02.jpg" alt="전인배" />
+                <img src="./images/me_image.jpg" alt="전인배" />
               </h3>
               <ol>
                 <li><strong>Name :</strong> 전인배</li>
@@ -317,22 +279,30 @@
           <article class="biography">
             <div class="detail">
               <h3>VISION</h3>
+
+              
               <p>
                 성장형 사고방식을 기반으로 평생 학습하며 살아가는 것이
                 목표입니다.
               </p>
-              <p>
-                꾸준함을 키우기 위해 피드백하는 것을 즐깁니다.<br />이를 증명할
-                수 있는 <a href="images/90days_log.png">90일간의 기록</a>이
-                있으며 꾸준히 업데이트 중입니다.<br />
-                빠르게 기술을 습득하기 위해 환경설정에 온 힘을 다 합니다.<br />
-              </p>
+            
               <p>말보다는 행동함으로써 긍정적인 미래를 만들어 가고 있습니다.</p>
             </div>
             <div class="detail">
               <h3>WHAT CAN I DO?</h3>
               <p>
-                <br />
+
+                <p>
+                  JS 플러그인을 사용에 그치지 않고 필요한 기능을 직접 구현할 수
+                  있는
+                  <mark> React/Javascript/jQuery 로직구현이 </mark> 가능합니다.
+                  <br />
+                  <a href=" https://kimnya.github.io/wack_mole2/"
+                    >바닐라자바스크립트로 프로젝트</a
+                  >를 진행한 경험이 있고 실전과 같은 경험으로 많은 것을
+                  배웠습니다.
+                </p>
+                
                 효율성을 위해 전체적인 분량을 한번 훓어보고 토대가 되는 20%의
                 중요지식을 뽑아 선취적으로 응용합니다. <br />때문에
                 <mark>ZenCoding(EMMET), SCSS</mark>을 사용하여 HTML5 & CSS3
@@ -345,24 +315,7 @@
                 검증된 레퍼런스를 참고하여 새롭게 만드는 능력은 저의 가장 큰
                 장점입니다.
               </p>
-              <p>
-                JS 플러그인을 사용에 그치지 않고 필요한 기능을 직접 구현할 수
-                있는
-                <mark> Javascript/jQuery/React 로직구현이 </mark> 가능합니다.
-                <br />
-                <a href=" https://kimnya.github.io/wack_mole2/"
-                  >바닐라자바스크립트로 프로젝트</a
-                >를 진행한 경험이 있고 실전과 같은 경험으로 많은 것을
-                배웠습니다.
-              </p>
-              <ul class="ican">
-                <li>ZenCoding(EMMET) &amp; SCSS</li>
-                <li>Javascript &amp; jQuery/React 로직구현</li>
-                <li>MVC 패턴의 페이지 구성</li>
-                <li>RWD 반응형 웹디자인</li>
-                <li>HTML5 DTD 유효성 검사 통과</li>
-                <li>웹접근성을 향상시킨 시멘틱 페이지</li>
-              </ul>
+            
             </div>
           </article>
         </div>
@@ -371,14 +324,6 @@
       <hr />
 
       <footer>
-        <article class="working">
-          <h2 class="sr-only">진행중인 작업</h2>
-          <p>
-            <b>NEW</b>
-            <a href="#">마켓컬리 반응형 이벤트 페이지 리뉴얼 작업중</a>
-            <time datetime="2023-02-8-17T11:46">2023-02-8-17</time>
-          </p>
-        </article>
         <article class="info">
           <div class="container">
             <h2>&copy; 2023 Designed by 전인배</h2>

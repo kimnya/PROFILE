@@ -134,36 +134,39 @@ $mobile: "screen and (max-width:640px)";
 
       > .myico {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 320px;
-        margin: 40px auto 0;
+        margin: 40px auto;
 
         @media #{$mobile} {
           margin-top: 80px;
         }
 
         > span {
-          display: block;
           width: 40px;
+          text-align: center;
           border: 1px solid $pri-color-3;
           border-radius: 3px;
           transform: rotate(45deg);
           transition: all 0.4s;
-
+          > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            > i {
+              display: block;
+              height: 40px;
+              line-height: 40px;
+              text-align: center;
+              color: $pri-color-3;
+              font-size: 18px;
+              transform: rotate(-45deg);
+            }
+          }
           &:hover {
             background-color: $pri-color-2;
             border-color: transparent;
             cursor: pointer;
-          }
-
-          > i {
-            display: block;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            color: $pri-color-3;
-            font-size: 18px;
-            transform: rotate(-45deg);
           }
         }
       } //end of .myico
@@ -513,359 +516,10 @@ $mobile: "screen and (max-width:640px)";
     } //end of .container
   } //end of #aboutme
 
-  > #skill {
-    > article.skill-1 {
-      width: 50%;
-      margin: 0 auto 100px;
-      > ol {
-        display: flex;
-        justify-content: space-between;
-        @media #{$mobile} {
-          width: 90%;
-          margin: 0 auto;
-          display: block;
-        }
-        > li {
-          display: flex;
-          width: 15%;
-          height: 150px;
-          text-indent: -9999px;
-          background-repeat: no-repeat;
-          box-sizing: border-box;
-
-          &:first-child {
-            background-image: url(./../images/skill1.png);
-            background-size: contain;
-
-            @media #{$mobile} {
-              padding-left: 180px;
-              background-position: 0 0;
-            }
-          }
-          &:nth-child(2) {
-            background-image: url(./../images/skill2.png);
-            background-size: contain;
-          }
-
-          &:nth-child(3) {
-            background-image: url(./../images/skill3.png);
-            background-size: contain;
-            @media #{$mobile} {
-              padding-left: 180px;
-              background-position: 0 0;
-            }
-          }
-          &:nth-child(4) {
-            background-image: url(./../images/skill4.png);
-            background-size: contain;
-          }
-          &:nth-child(5) {
-            background-image: url(./../images/skill5.png);
-            background-size: contain;
-          }
-          &:last-child {
-            background-image: url(./../images/skill6.png);
-            background-size: contain;
-          }
-          @media #{$mobile} {
-            width: 100%;
-          }
-        }
-      } //ol
-    } //end article
-    > .slides {
-      width: 1200px;
-      margin: 0 auto;
-      overflow: hidden;
-      position: relative;
-      height: 440px;
-      @media #{$mobile} {
-        width: 100%;
-        margin: 0;
-      }
-      > .slides-container {
-        display: flex;
-        position: absolute;
-        left: -000%;
-        top: 0;
-        width: 400%;
-
-        /*
-				  첫번째 슬라이드가 보일려면 left값이 얼마? -000% = -100%*0
-				  두번째 슬라이드가 보일려면 left값이 얼마? -100% = -100%*1
-				  세번째 슬라이드가 보일려면 left값이 얼마? -200% = -100%*2
-				  네번째 슬라이드가 보일려면 left값이 얼마? -300% = -100%*3
-  
-				  */
-        > li {
-          width: 25%;
-          height: 440px;
-          text-indent: -9999px;
-          background-position: center center;
-          background-size: cover;
-          &.banner_1 {
-            background-image: url(./../images/uxdesign/slides/slide_1.png);
-            @media #{$mobile} {
-              background-image: url(./../images/uxdesign//slides/rwd_slide_1.png);
-            }
-          }
-          &.banner_2 {
-            background-image: url(./../images/uxdesign/slides/slide_2.jpg);
-            @media #{$mobile} {
-              background-image: url(./../images/uxdesign//slides/rwd_slide_2.png);
-            }
-          }
-          &.banner_3 {
-            background-image: url(./../images/uxdesign/slides/slide_3.jpg);
-            @media #{$mobile} {
-              background-image: url(./../images/uxdesign//slides/rwd_slide_3.png);
-            }
-          }
-          &.banner_4 {
-            background-image: url(./../images/uxdesign/slides/slide_4.jpg);
-            @media #{$mobile} {
-              background-image: url(./../images/uxdesign//slides/rwd_slide_4.png);
-            }
-          }
-        }
-      } //.slides-container
-      > .slides-pagination {
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        left: 50%;
-        bottom: 15px;
-        width: 110px;
-        transform: translate(-50%, 0);
-        > li {
-          width: 18px;
-          background-image: url(./../images/uxdesign/slides/bul.png);
-          &:hover,
-          &.on {
-            background-position: 0 -18px;
-          }
-          > a {
-            display: block;
-            height: 18px;
-            text-indent: -999px;
-          }
-        }
-      } //.solids-pagination
-
-      > .slides-nav {
-        display: block;
-        position: absolute;
-        top: 50%;
-        width: 80px;
-        height: 100px;
-        text-indent: -9999px;
-        background-image: url(./../images/uxdesign/slides/btn_navigation.png);
-        transform: translate(0 -50%);
-        &.slides-prev {
-          left: 0;
-          background-position: -5px -225px;
-          &:hover {
-            background-position: -5px -335px;
-          }
-        }
-        &.slides-next {
-          right: 0;
-          background-position: -5px -5px;
-          &:hover {
-            background-position: -5px -115px;
-          }
-        }
-      } //.slides-nav
-    } //.slides
-
-    > .uxui {
-      width: 1200px;
-      margin: 100px auto 0;
-      padding-bottom: 104px;
-      @media #{$mobile} {
-        width: 100%;
-      }
-      > h3 {
-        position: relative;
-        width: 330px;
-        margin: 0 auto 156px;
-        padding-bottom: 20px;
-        font-weight: 500;
-        font-size: 32px;
-        text-align: center;
-        border-bottom: 2px solid $sec-color-3;
-
-        @media #{$mobile} {
-          margin-bottom: 50px;
-        }
-
-        &:before,
-        &:after {
-          position: absolute;
-          top: 130px;
-          color: $pri-color-2;
-          font-weight: 800;
-          font-size: 36px;
-        }
-
-        &:before {
-          left: 50%;
-          margin-left: -200px;
-          content: "UX";
-          @media #{$mobile} {
-            top: 210px;
-            width: 40px;
-            margin-left: -20px;
-            font-size: 24px;
-            text-align: center;
-          }
-        }
-        &:after {
-          right: 50%;
-          margin-right: -200px;
-          content: "UI";
-          @media #{$mobile} {
-            top: 520px;
-            width: 40px;
-            margin-right: -20px;
-            font-size: 24px;
-            text-align: center;
-          }
-        }
-      } //h3
-      > .container {
-        @media #{$mobile} {
-          display: flex;
-          justify-content: center;
-        }
-        > .uxui-case {
-          display: flex;
-          flex-flow: row nowrap;
-          position: relative;
-
-          @media #{$mobile} {
-            flex-direction: column;
-            width: 40%;
-
-            &:first-child {
-              margin-right: 30px;
-            }
-
-            &:last-child {
-              margin-left: 30px;
-            }
-          }
-
-          &:hover > .ui-frame {
-            left: 0;
-            margin-left: 0;
-          }
-          &:hover > .ux-frame {
-            right: 0;
-            margin-right: 0;
-          }
-          &:nth-of-type(2) {
-            margin-top: 30px;
-            @media #{$mobile} {
-              margin-top: 0;
-            }
-          }
-
-          > dl {
-            order: 200;
-            width: 40%;
-            height: 280px;
-            margin: 0 auto;
-            padding-top: 100px;
-            text-align: center;
-            background-color: darken($sec-color-3, 10%);
-            box-sizing: border-box;
-            @media #{$mobile} {
-              width: 100%;
-              padding: 80px 10px 0;
-            }
-
-            > dt {
-              margin-bottom: 30px;
-              color: lighten($sec-color-2, 10%);
-              font-weight: 600;
-              font-size: 20px;
-            }
-            > dd {
-              font-size: 13px;
-              line-height: 1.6;
-              color: lighten($sec-color-2, 10%);
-              @media #{$mobile} {
-                > br {
-                  display: none;
-                }
-              }
-            }
-          } //dl
-          > .ui-frame {
-            order: 100;
-            display: block;
-            position: absolute;
-            left: 50%;
-            top: 0;
-            width: 420px;
-            height: 280px;
-            margin-left: -420px;
-            transition: all 0.3s ease-out;
-            @media #{$mobile} {
-              position: initial;
-              width: 100%;
-              height: auto;
-              margin: 0;
-            }
-
-            img {
-              display: block;
-              width: 100%;
-              height: 100%;
-              border-radius: 140px 0 0 140px;
-              @media #{$mobile} {
-                border-radius: 150px 150px 0 0;
-              }
-            }
-          } //.ui-frame
-          > .ux-frame {
-            order: 300;
-            display: block;
-            position: absolute;
-            right: 50%;
-            top: 0;
-            @media #{$mobile} {
-              position: initial;
-              width: 100%;
-              height: auto;
-              margin: 0;
-            }
-
-            width: 420px;
-            height: 280px;
-            margin-right: -420px;
-            transition: all 0.3s ease-out;
-            img {
-              display: block;
-              width: 100%;
-              height: 100%;
-              border-radius: 0 140px 140px 0;
-
-              @media #{$mobile} {
-                border-radius: 0 0 150px 150px;
-              }
-            }
-          } //.ux-frame
-        }
-      } //.uxui-case
-    } //.uxui
-  } //end #skill
-
   > #portfolio {
     > article {
       width: 1200px;
-      margin: 0 auto;
+      margin: 0 auto 200px;
 
       @media #{$mobile} {
         width: 100%;
@@ -998,9 +652,11 @@ $mobile: "screen and (max-width:640px)";
                   background-color: $sec-color-3;
                   border-radius: 50px;
                   transition: all 0.2s;
+                  &:nth-child(2) {
+                    margin: 30px 10px;
+                  }
 
                   &.proc {
-                    margin-right: 10px;
                     color: $pri-color-3;
                     background-color: $sec-color-1;
                     box-sizing: border-box;
@@ -1081,6 +737,13 @@ $mobile: "screen and (max-width:640px)";
                   left: 50%;
                   width: 170px;
                   transform: translate(-50%, 0);
+
+                  @media #{$mobile} {
+                    width: 80px;
+                    left: 50%;
+                    top: 18px;
+                    transform: translate(-50%, 0);
+                  }
                 }
               }
             } //figure:last-child
@@ -1180,6 +843,9 @@ $mobile: "screen and (max-width:640px)";
           } //end p
         }
       } //end of .intro
+      .slides-navigation {
+        text-indent: -9999px;
+      }
     } //article
   } //.portfolio
 
@@ -1427,4 +1093,19 @@ $mobile: "screen and (max-width:640px)";
       }
     } //end of .top
   } //end of aside
+  //모달창
+
+  .shadow {
+    display: none;
+    > .lightbox {
+      position: absolute;
+      left: 0%;
+      top: 0%;
+      transform: translate(-50% 0);
+      > video {
+        display: block;
+        width: 1000px;
+      }
+    }
+  }
 } //end of #wrap

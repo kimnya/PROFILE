@@ -62,7 +62,7 @@ $(function () {
 
   $(window).on("scroll", function () {
     let scrollTop = $(this).scrollTop();
-    const $aboutme = $home.nextAll("#aboutme");
+    const $portfolio = $home.nextAll("#portfolio");
 
     //비주얼에 재미있는 효과
     if (window.innerWidth > 640) {
@@ -80,19 +80,19 @@ $(function () {
     //헤더고정
     if (scrollTop > $(this).height()) {
       $header.addClass("fixed");
-      $aboutme.css({
+      $portfolio.css({
         marginTop: $headerH,
       });
     } else {
       $header.removeClass("fixed");
-      $aboutme.css({
+      $portfolio.css({
         marginTop: 0,
       });
     }
 
     //메뉴 활성화 표시
     for (let i = 0; i < $mnus.length; i++) {
-      if (scrollTop >= arrTopVal[i] - $headerH - 150) {
+      if (scrollTop >= arrTopVal[i] - $headerH - 200) {
         $mnus.eq(i).parent().addClass("on").siblings().removeClass("on");
       } else if (scrollTop < arrTopVal[0] - $headerH - 150) {
         $mnus.parent().removeClass("on");
@@ -117,7 +117,7 @@ $(function () {
     $("html, body").stop().animate({
       scrollTop: arrTopVal[nowIdx],
     });
-    if (!(window.innerWidth > 640)) {
+    if (!(window.innerWidth > 600)) {
       $btnGnb.trigger("click"); //클릭이벤트 강제발생
       $("html, body")
         .stop()
@@ -140,136 +140,6 @@ $(function () {
       evt.preventDefault();
       $("html,body").stop().animate({ scrollTop: 0 });
     });
-});
-
-//ability 영역
-// $(function () {
-// 	$(window).on('scroll', function () {
-// 		const scrollTop = $(this).scrollTop();
-// 		//offset.top이 3000 - 1000(window.innerHeight) +400 = 2400일때  리턴
-// 		if (scrollTop > $('#ability').offset().top - window.innerHeight + 400) {
-// 			$('#ability .bar').each(function () {
-// 				$(this).width($(this).children('span').text());
-// 			});
-// 		} else if (scrollTop < $('#ability').offset().top - window.innerHeight) {
-// 			$('#ability .bar').width(0);
-// 		}
-
-// 		if (scrollTop > $('#ability').offset().top + window.innerHeight) {
-// 			$('#ability .bar').width(0);
-// 		}
-// 	});
-// });
-
-//resume 이력서 띄우기
-// $(function () {
-//   const $resume = $(".resume_click");
-//   const $lightbox = $(".lightbox");
-//   const $shadow = $(".shadow");
-
-//   $resume.on("click", function (evt) {
-//     evt.preventDefault();
-//     const imgSrc = $lightbox.children().attr("src");
-//     const imgAlt = $lightbox.children().attr("alt");
-
-//     $lightbox.children("img").attr({
-//       src: imgSrc,
-//       alt: imgAlt,
-//     });
-//     $lightbox.show();
-//     $shadow.show();
-//   });
-//   $(".clse").on("click", function () {
-//     $shadow.fadeOut();
-//   });
-// });
-
-//uxdesign 영역
-$(function () {
-  const $container = $("#skill>.slides>.slides-container");
-  const $indicator = $("#skill>.slides>.slides-pagination>li>a");
-  const $btnPrev = $("#skill>.slides>.slides-prev");
-  const $btnNext = $("#skill>.slides>.slides-next");
-
-  let nowIdx = 0;
-
-  let aniChk = false; //'현재 애니메이트중이 아님'을 의미
-
-  $btnNext.on("click", function (evt) {
-    evt.preventDefault();
-
-    if (!aniChk) {
-      aniChk = !aniChk;
-
-      if (nowIdx < $indicator.length - 1) {
-        nowIdx++;
-      } else {
-        nowIdx = 0;
-      }
-
-      $container
-        .stop()
-        .animate({ left: "-100%" }, 400, "easeInOutCubic", function () {
-          const $slides = $("#skill>.slides>.slides-container>li");
-          $slides.first().appendTo($container); //마지막 자식으로 li를 이동
-          $container.css({ left: 0 });
-          aniChk = !aniChk;
-        });
-
-      $indicator
-        .eq(nowIdx)
-        .parent()
-        .addClass("on")
-        .siblings()
-        .removeClass("on");
-    }
-  });
-
-  $btnPrev.on("click", function (evt) {
-    evt.preventDefault();
-
-    if (!aniChk) {
-      aniChk = !aniChk;
-
-      if (nowIdx > 0) {
-        nowIdx--;
-      } else {
-        nowIdx = $indicator.length - 1;
-      }
-
-      const $slides = $("#skill>.slides>.slides-container>li");
-      $slides.last().prependTo($container);
-      $container.css({ left: "-100%" });
-      $container
-        .stop()
-        .animate({ left: 0 }, 400, "easeInOutCubic", function () {
-          aniChk = !aniChk;
-        });
-
-      $indicator
-        .eq(nowIdx)
-        .parent()
-        .addClass("on")
-        .siblings()
-        .removeClass("on");
-    }
-  });
-
-  $indicator.on("click", function (evt) {
-    evt.preventDefault();
-    nowIdx = $indicator.index(this);
-    $container.stop().animate({
-      left: -100 * nowIdx + "%",
-    });
-
-    $indicator.eq(nowIdx).parent().addClass("on").siblings().removeClass("on");
-  });
-
-  //3초마다 자동실행 -인터벌, 다음인덱스 , 이동 다음버튼에 클릭이벤트 트리거 설정
-
-  setInterval(function () {
-    $btnNext.trigger("click"); //이벤트 강제발생
-  }, 3000);
 });
 
 //portfolio 영역
@@ -320,37 +190,27 @@ $(function () {
     fadeFn();
   });
 
-  // //작업과정 라이트박스
+  //영상 모달창
+  $(function () {
+    const $videohandle = $("#modalHnadle");
+    const $lightbox = $(".lightbox");
+    const $shadow = $(".shadow");
 
-  // const $btnProc = $("#portfolio .proc");
-  // const $shadow = $("#portfolio .shadow");
-  // const $btnClse = $shadow.children(".clse");
-
-  // $btnProc.on("click", function (evt) {
-  //   evt.preventDefault();
-  //   $shadow.show();
-  // });
-
-  // $btnClse.on("click", function () {
-  //   $shadow.hide();
-  // });
-
-  // // 그림자 영역 클릭시 닫힘
-  // $shadow.on("click", function () {
-  //   $(this).hide();
-  // });
-
-  // // 이벤트전파 차단
-  // $shadow.children(".lightbox").on("click", function (evt) {
-  //   evt.stopPropagation();
-  // });
-
-  // //esc키로 닫기
-  // $(document).on("keyup", function (evt) {
-  //   if (evt.which === 27) {
-  //     $shadow.hide();
-  //   }
-  // });
+    $videohandle.on("click", function (evt) {
+      evt.preventDefault();
+      $lightbox.show();
+      $shadow.show();
+    });
+    $(".clse").on("click", function () {
+      $shadow.fadeOut();
+    });
+    //esc키로 닫기
+    $(document).on("keyup", function (evt) {
+      if (evt.which === 27) {
+        $shadow.hide();
+      }
+    });
+  });
 });
 
 //contact 영역
