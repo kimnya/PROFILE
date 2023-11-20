@@ -674,13 +674,13 @@
     top: 18px;
   }
 }
-#wrap > #portfolio > article.slides > .slides-container > figure:last-child > .frame > img {
+#wrap > #portfolio > article.slides > .slides-container > figure.kakaotalk > .frame > img {
   left: 50%;
   width: 170px;
   transform: translate(-50%, 0);
 }
 @media screen and (max-width:640px) {
-  #wrap > #portfolio > article.slides > .slides-container > figure:last-child > .frame > img {
+  #wrap > #portfolio > article.slides > .slides-container > figure.kakaotalk > .frame > img {
     width: 80px;
     left: 50%;
     top: 18px;
