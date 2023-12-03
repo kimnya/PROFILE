@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #wrap {
   position: relative;
   min-width: 1200px;
@@ -450,6 +451,104 @@
   color: #52b3d9;
   font-family: "Font Awesome 5 Free";
   content: "\f14a";
+}
+#wrap #design {
+  width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (max-width:640px) {
+  #wrap #design {
+    width: 100%;
+    margin: 0;
+  }
+}
+#wrap #design > .slides {
+  overflow: hidden;
+  position: relative;
+  height: 667px;
+}
+#wrap #design > .slides > .slides-container {
+  display: flex;
+  position: absolute;
+  left: 0%;
+  top: 0;
+  width: 400%;
+  /*
+  첫번째 슬라이드가 보일려면 left값이 얼마? -000% = -100%*0
+  두번째 슬라이드가 보일려면 left값이 얼마? -100% = -100%*1
+  세번째 슬라이드가 보일려면 left값이 얼마? -200% = -100%*2
+  네번째 슬라이드가 보일려면 left값이 얼마? -300% = -100%*3
+
+  */
+}
+#wrap #design > .slides > .slides-container > li {
+  width: 25%;
+  height: 667px;
+  text-indent: -9999px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#wrap #design > .slides > .slides-container > li.banner_1 {
+  background-image: url(./../images/design_happy.png);
+}
+@media screen and (max-width:640px) {
+  #wrap #design > .slides > .slides-container > li.banner_1 {
+    background-image: url(./../images/design_happy.png);
+  }
+}
+#wrap #design > .slides > .slides-container > li.banner_2 {
+  background-image: url(./../images/design_banner.png);
+}
+@media screen and (max-width:640px) {
+  #wrap #design > .slides > .slides-container > li.banner_2 {
+    background-image: url(./../images/design_banner.png);
+  }
+}
+#wrap #design > .slides > .slides-pagination {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  width: 110px;
+  transform: translate(-50%, 0);
+}
+#wrap #design > .slides > .slides-pagination > li {
+  width: 18px;
+  background-image: url(./../images/uxdesign/slides/bul.png);
+}
+#wrap #design > .slides > .slides-pagination > li:hover, #wrap #design > .slides > .slides-pagination > li.on {
+  background-position: 0 -18px;
+}
+#wrap #design > .slides > .slides-pagination > li > a {
+  display: block;
+  height: 18px;
+  text-indent: -999px;
+}
+#wrap #design > .slides > .slides-nav {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 80px;
+  height: 100px;
+  text-indent: -9999px;
+  background-image: url(./../images/uxdesign/slides/btn_navigation.png);
+  transform: translate(0 -50%);
+}
+#wrap #design > .slides > .slides-nav.slides-prev {
+  left: 0;
+  background-position: -5px -225px;
+}
+#wrap #design > .slides > .slides-nav.slides-prev:hover {
+  background-position: -5px -335px;
+}
+#wrap #design > .slides > .slides-nav.slides-next {
+  right: 0;
+  background-position: -5px -5px;
+}
+#wrap #design > .slides > .slides-nav.slides-next:hover {
+  background-position: -5px -115px;
 }
 #wrap > #portfolio > article {
   width: 1200px;

@@ -15,7 +15,6 @@ $(function () {
   const $mnus = $nav.find("a");
   const $btnGnb = $header.find(".btn-gnb");
   const $aside = $("aside");
-  const $resume = $(".resume");
 
   const $headerH = $header.height();
   const arrTopVal = [];
@@ -62,7 +61,7 @@ $(function () {
 
   $(window).on("scroll", function () {
     let scrollTop = $(this).scrollTop();
-    const $portfolio = $home.nextAll("#portfolio");
+    const $design = $home.nextAll("#design");
 
     //비주얼에 재미있는 효과
     if (window.innerWidth > 640) {
@@ -80,12 +79,12 @@ $(function () {
     //헤더고정
     if (scrollTop > $(this).height()) {
       $header.addClass("fixed");
-      $portfolio.css({
+      $design.css({
         marginTop: $headerH,
       });
     } else {
       $header.removeClass("fixed");
-      $portfolio.css({
+      $design.css({
         marginTop: 0,
       });
     }
@@ -140,6 +139,93 @@ $(function () {
       evt.preventDefault();
       $("html,body").stop().animate({ scrollTop: 0 });
     });
+});
+
+$(function () {
+  const $container = $("#design>.slides>.slides-container");
+  const $indicator = $("#design>.slides>.slides-pagination>li>a");
+  const $btnPrev = $("#design>.slides>.slides-prev");
+  const $btnNext = $("#design>.slides>.slides-next");
+
+  let nowIdx = 0;
+
+  let aniChk = false; //'현재 애니메이트중이 아님'을 의미
+
+  $btnNext.on("click", function (evt) {
+    evt.preventDefault();
+
+    if (!aniChk) {
+      aniChk = !aniChk;
+
+      if (nowIdx < $indicator.length - 1) {
+        nowIdx++;
+      } else {
+        nowIdx = 0;
+      }
+
+      $container
+        .stop()
+        .animate({ left: "-100%" }, 400, "easeInOutCubic", function () {
+          const $slides = $("#design>.slides>.slides-container>li");
+          $slides.first().appendTo($container); //마지막 자식으로 li를 이동
+          $container.css({ left: 0 });
+          aniChk = !aniChk;
+        });
+
+      $indicator
+        .eq(nowIdx)
+        .parent()
+        .addClass("on")
+        .siblings()
+        .removeClass("on");
+    }
+  });
+
+  $btnPrev.on("click", function (evt) {
+    evt.preventDefault();
+
+    if (!aniChk) {
+      aniChk = !aniChk;
+
+      if (nowIdx > 0) {
+        nowIdx--;
+      } else {
+        nowIdx = $indicator.length - 1;
+      }
+
+      const $slides = $("#design>.slides>.slides-container>li");
+      $slides.last().prependTo($container);
+      $container.css({ left: "-100%" });
+      $container
+        .stop()
+        .animate({ left: 0 }, 400, "easeInOutCubic", function () {
+          aniChk = !aniChk;
+        });
+
+      $indicator
+        .eq(nowIdx)
+        .parent()
+        .addClass("on")
+        .siblings()
+        .removeClass("on");
+    }
+  });
+
+  $indicator.on("click", function (evt) {
+    evt.preventDefault();
+    nowIdx = $indicator.index(this);
+    $container.stop().animate({
+      left: -100 * nowIdx + "%",
+    });
+
+    $indicator.eq(nowIdx).parent().addClass("on").siblings().removeClass("on");
+  });
+
+  //3초마다 자동실행 -인터벌, 다음인덱스 , 이동 다음버튼에 클릭이벤트 트리거 설정
+
+  setInterval(function () {
+    $btnNext.trigger("click"); //이벤트 강제발생
+  }, 5000);
 });
 
 //portfolio 영역
