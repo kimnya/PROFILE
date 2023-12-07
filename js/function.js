@@ -61,7 +61,7 @@ $(function () {
 
   $(window).on("scroll", function () {
     let scrollTop = $(this).scrollTop();
-    const $design = $home.nextAll("#design");
+    const $portfolio = $home.nextAll("#portfolio");
 
     //비주얼에 재미있는 효과
     if (window.innerWidth > 640) {
@@ -79,12 +79,12 @@ $(function () {
     //헤더고정
     if (scrollTop > $(this).height()) {
       $header.addClass("fixed");
-      $design.css({
+      $portfolio.css({
         marginTop: $headerH,
       });
     } else {
       $header.removeClass("fixed");
-      $design.css({
+      $portfolio.css({
         marginTop: 0,
       });
     }
